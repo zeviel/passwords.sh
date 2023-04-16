@@ -3,7 +3,7 @@ Web-API for [passwords](https://vk.com/passwords_generator) and vk service to ge
 
 ## Example
 ```bash
-source passwords.sh
+source ./passwords.sh
 authenticate "sign" "vk_user_id" "vk_ts" "vk_ref"
 ```
 
