@@ -5,6 +5,7 @@ sign=null
 vk_user_id=null
 vk_ts=null
 vk_ref=null
+user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.114 Safari/537.36"
 
 function authenticate() {
 	# 1 - sign: (string): <sign>
@@ -28,7 +29,7 @@ function authenticate() {
 function get_init() {
 	curl --request POST \
 		--url "$api/init" \
-		--user-agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.114 Safari/537.36" \
+		--user-agent "$user_agent" \
 		--header "content-type: application/json" \
 		--header "authorization: Bearer $params"
 }
@@ -36,7 +37,7 @@ function get_init() {
 function get_profile() {
 	curl --request POST \
 		--url "$api/getProfile" \
-		--user-agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.114 Safari/537.36" \
+		--user-agent "$user_agent" \
 		--header "content-type: application/json" \
 		--header "authorization: Bearer $params"
 }
@@ -45,7 +46,7 @@ function get_passwords() {
 	# 1 - code: (integer): <code - default: 1>
 	curl --request POST \
 		--url "$api/getPasswords" \
-		--user-agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.114 Safari/537.36" \
+		--user-agent "$user_agent" \
 		--header "content-type: application/json" \
 		--header "authorization: Bearer $params" \
 		--data '{
@@ -58,7 +59,7 @@ function add_password() {
 	# 2 - name: (string): <name>
 	curl --request POST \
 		--url "$api/addPassword" \
-		--user-agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.114 Safari/537.36" \
+		--user-agent "$user_agent" \
 		--header "content-type: application/json" \
 		--header "authorization: Bearer $params" \
 		--data '{
